@@ -1,1 +1,11 @@
-<p>product-department works!</p>
+<div class="product-department">
+    <span *ngFor="let departmentName of product.department; let i=index">
+        <a href="#">
+            {{ departmentName }}
+        </a>
+        <span>
+            <!-- If this isn't the last department on the breadcrumbs then add another '>' -->
+            {{ i < (product.department.length - 1) ? '>' : ''}}
+        </span>
+    </span>
+</div>
