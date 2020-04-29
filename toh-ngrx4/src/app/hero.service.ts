@@ -14,8 +14,6 @@ export class HeroService {
   // needs to be observable because async for server
   getHeroes(): Observable<Hero[]> {
     // of returns a single value for an observer
-    return of(extractHeroes());
+    return of(extractHeroes(0));
   }
-
- 
 }
