@@ -12,3 +12,17 @@ export const HEROES: Hero[] = [
   { id: 19, name: 'Magma' },
   { id: 20, name: 'Tornado' }
 ];
+
+function sleep(milliseconds) {
+  const date = Date.now();
+  let currentDate = null;
+  do {
+    currentDate = Date.now();
+  } while (currentDate - date < milliseconds);
+}
+
+// simulates latency
+export function extractHeroes(latency: number) {
+  sleep(latency);
+  return HEROES;
+}

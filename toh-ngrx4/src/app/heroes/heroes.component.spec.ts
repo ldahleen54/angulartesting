@@ -23,12 +23,9 @@ describe('HeroesComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should select Glueman', () => {
-    const fixture = TestBed.createComponent(HeroesComponent);
-    let glueGuy: Hero;
-    component.onSelect(new Hero());
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector()).toBe('Glueman');
+  it('#onSelect should set selected hero to Glueman', () => {
+    component.onSelect({"id": 1, "name": "Glueman" });
+    expect(component.selectedHero.name).toContain('Glueman');
   });
+
 });

@@ -13,4 +13,9 @@ describe('HeroService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  // should services just be tested normally if they are retrieving data from a server
+  // it('should get correct heroes', () => {
+
+  // });
 });
