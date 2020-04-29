@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { Hero } from '../hero';
 import { HeroesComponent } from './heroes.component';
 
 describe('HeroesComponent', () => {
@@ -21,5 +21,14 @@ describe('HeroesComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should select Glueman', () => {
+    const fixture = TestBed.createComponent(HeroesComponent);
+    let glueGuy: Hero;
+    component.onSelect(new Hero());
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector()).toBe('Glueman');
   });
 });
