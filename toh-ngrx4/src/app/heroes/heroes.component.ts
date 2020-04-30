@@ -30,5 +30,4 @@ export class HeroesComponent implements OnInit {
   ngOnInit(): void {
     this.heroes = this.getHeroes();
   }
-
 }
