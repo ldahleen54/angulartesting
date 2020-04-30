@@ -20,13 +20,15 @@ export class HeroesComponent implements OnInit {
     this.messageService.add(`HeroService: Selected hero id=${hero.id}`);
   }
 
-  getHeroes(): void {
+  getHeroes(): Hero[] {
+    let heroesList: Hero[];
     this.heroService.getHeroes()
-        .subscribe(heroes => this.heroes = heroes);
+        .subscribe(hero => heroesList = hero);
+    return heroesList;
   }
   
   ngOnInit(): void {
-    this.getHeroes();
+    this.heroes = this.getHeroes();
   }
 
 }
