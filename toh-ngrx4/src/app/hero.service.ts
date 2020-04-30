@@ -12,7 +12,6 @@ export class HeroService {
 
   constructor(private messageService: MessageService) { }
 
-  // needs to be observable because async for server
   getHeroes(): Observable<Hero[]> {
     this.messageService.add('Hero Service: fetched heroes');
     // of returns a single value for an observer
