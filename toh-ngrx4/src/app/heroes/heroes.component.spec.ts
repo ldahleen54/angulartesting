@@ -23,9 +23,16 @@ describe('HeroesComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('#onSelect should set selected hero to Glueman', () => {
+  it('#onSelect should set selected hero to Glueman', async() => {
     component.onSelect({"id": 1, "name": "Glueman" });
     expect(component.selectedHero.name).toContain('Glueman');
   });
+  //technically an integration test
+  it('Should retrieve heroes', async() => {
+    expect(component.getHeroes()).toBeDefined();
+  });
+  
+
 
 });
+
