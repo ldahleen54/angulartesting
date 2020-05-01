@@ -1,0 +1,4 @@
+[0429/010109.477:ERROR:registration_protocol_win.cc(131)] TransactNamedPipe: The pipe has been ended. (0x6D)
+[0429/010109.478:ERROR:file_io.cc(89)] ReadExactly: expected 40, observed 0
+[0429/010109.536:ERROR:registration_protocol_win.cc(131)] TransactNamedPipe: The pipe has been ended. (0x6D)
+[0429/010109.537:ERROR:file_io.cc(89)] ReadExactly: expected 40, observed 0

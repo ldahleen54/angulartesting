@@ -13,6 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "codeCoverage": true,
             "outputPath": "dist/my-app",
             "index": "src/index.html",
             "main": "src/main.ts",
