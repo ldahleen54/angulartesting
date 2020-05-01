@@ -17,4 +17,10 @@ export class HeroService {
     // of returns a single value for an observer
     return of(extractHeroes(0));
   }
+
+  getHero(id: number): Observable<Hero> {
+    this.messageService.add(`Fetched hero: with id id=${id}`);
+    return of(extractHeroes(10).find(hero => hero.id === id));
+  }
+
 }
