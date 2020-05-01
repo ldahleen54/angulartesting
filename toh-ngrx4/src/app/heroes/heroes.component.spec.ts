@@ -8,7 +8,7 @@ import { of } from 'rxjs/internal/observable/of';
 import { Observable } from 'rxjs/internal/Observable';
 
 class MockedHeroService {
-  private heroes = [{ id: 11, name: 'Glueman'}];
+  private heroes = [{ id: 11, name: 'Glueman', age: 11}];
   getHeroes(): Observable<Hero[]> {
     return of(this.heroes);
   }
@@ -36,8 +36,8 @@ describe('HeroesComponent', () => {
   });
 
   it('#onSelect should set selected hero to Glueman', async() => {
-    component.onSelect({"id": 1, "name": "Glueman" });
-    expect(component.selectedHero.name).toContain('Glueman');
+    component.onSelect({"id": 1, "name": "Glueman", "age": 10 });
+    expect(debugElement.nativeElement.querySelector('h2').innerText).toBe('GLUEMAN');
   });
   //technically an integration test
   it('Should retrieve heroes', async() => {
