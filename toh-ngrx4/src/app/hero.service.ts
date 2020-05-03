@@ -11,9 +11,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class HeroService {
   private heroesAPIUrl = 'api/heroes';
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
   constructor(
-    private http: HttpClient,
-    private messageService: MessageService) { }
+      private http: HttpClient,
+    private messageService: MessageService
+    ) { }
 
   getHeroes(): Observable<Hero[]> {
     // of returns a single value for an observer
@@ -31,6 +35,14 @@ export class HeroService {
         tap(_ => this.log(`Fetched hero with id=${id}`)),
         catchError(this.handleError<Hero>(`getHero id=${id}`))
       )
+  }
+
+  updateHero(hero: Hero): Observable<any> {
+    return this.http.put(this.heroesAPIUrl, hero, this.httpOptions)
+      .pipe(
+        tap(_ => this.log(`updated hero id=${hero.id}`)),
+        catchError(this.handleError<any>('updateHero'))
+      );
   }
 
   /** Log a HeroService message with the MessageService */
