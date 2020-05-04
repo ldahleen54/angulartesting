@@ -16,7 +16,7 @@ export class HeroService {
   };
   constructor(
       private http: HttpClient,
-    private messageService: MessageService
+      private messageService: MessageService
     ) { }
 
   getHeroes(): Observable<Hero[]> {
@@ -50,6 +50,18 @@ export class HeroService {
       .pipe(
         tap(_ => this.log(`updated hero id=${hero.id}`)),
         catchError(this.handleError<any>('updateHero'))
+      );
+  }
+
+  deleteHero(hero: Hero): Observable<any> {
+    // error prevention if hero is a number hero.id is undefined
+    const id = typeof hero === 'number' ? hero: hero.id;
+    const url = `${this.heroesAPIUrl}/${id}`;
+
+    return this.http.delete<Hero>(url, this.httpOptions)
+      .pipe(
+        tap(_ => this.log(`deleted hero id: ${id}`)),
+        catchError(this.handleError<Hero>('deleteHero'))
       );
   }
 
