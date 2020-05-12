@@ -23,7 +23,7 @@ import { InMemoryDataService }  from './in-memory-data.service';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    // Simulates an web api in memory
+    // Simulates a web api in memory
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     )
