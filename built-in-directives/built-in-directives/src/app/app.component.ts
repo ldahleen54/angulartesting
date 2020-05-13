@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'built-in-directives';
+  color: string;
+  fontSize: number;
+  apply(color: string, fontSize: number) {
+    this.color = color;
+    this.fontSize = fontSize;
+  }
 }
