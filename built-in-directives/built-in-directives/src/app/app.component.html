@@ -32,3 +32,12 @@
 <div [style.background-color]="color" style="color: white;">
   {{ color }} background
 </div>
+
+<span>Non bindable area</span>
+<div class="ngNonBindableDemo">
+  <span class="bordered"> {{ content }}</span>
+  <br>
+  <span class="pre" ngNonBindable>
+    This is what {{ content }} rendered
+  </span>
+</div>
