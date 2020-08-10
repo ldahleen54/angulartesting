@@ -6,6 +6,7 @@ import { By } from '@angular/platform-browser';
 import { MessageService } from '../message.service';
 import { of } from 'rxjs/internal/observable/of';
 import { Observable } from 'rxjs/internal/Observable';
+import { HttpClient, HttpHandler } from '@angular/common/http';
 
 class MockedHeroService {
   private heroes = [{ id: 11, name: 'Glueman', age: 11}];
@@ -21,7 +22,7 @@ describe('HeroesComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ HeroesComponent ],
-      providers: [ MockedHeroService, MessageService]
+      providers: [ MockedHeroService, MessageService, HttpClient, HttpHandler]
     })
     .compileComponents();
     fixture = TestBed.createComponent(HeroesComponent);

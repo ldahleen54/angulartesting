@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HeroDetailComponent } from './hero-detail.component';
 import { ActivatedRoute } from '@angular/router';
 import { HeroService } from '../hero.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHandler } from '@angular/common/http';
 import { MessageService } from '../message.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 class MockHeroService extends HeroService {
@@ -32,7 +32,8 @@ describe('HeroDetailComponent', () => {
           //     MockHeroService
           //   }
           // }
-          
+          HttpClient,
+          HttpHandler
         ]
     })
     .compileComponents();
